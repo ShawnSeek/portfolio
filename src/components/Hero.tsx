@@ -1,8 +1,8 @@
+import MagicButton from "@/components/ui/MagicButton";
+import { Spotlight } from "@/components/ui/Spotlight";
+import { TextGenerateEffect } from "@/components/ui/TextGenerateEffect";
 import Link from "next/link";
 import { FaLocationArrow } from "react-icons/fa";
-import MagicButton from "./ui/MagicButton";
-import { Spotlight } from "./ui/Spotlight";
-import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 
 const Hero = () => {
   return (

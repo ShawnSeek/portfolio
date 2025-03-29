@@ -1,12 +1,12 @@
 "use client";
+import { GridGlobe } from "@/components/ui/GridGlobe";
+import { BackgroundGradientAnimation } from "@/components/ui/GridientBg";
+import MagicButton from "@/components/ui/MagicButton";
 import animationData from "@/data/confetti.json";
 import { cn } from "@/lib/utils";
 import dynamic from "next/dynamic";
 import { useState } from "react";
 import { IoCopyOutline } from "react-icons/io5";
-import { GridGlobe } from "./GridGlobe";
-import { BackgroundGradientAnimation } from "./GridientBg";
-import MagicButton from "./MagicButton";
 
 const Lottie = dynamic(() => import("react-lottie"), {
   ssr: false,
