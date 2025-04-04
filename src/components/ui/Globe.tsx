@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import countries from "@/data/globe.json";
 import { OrbitControls } from "@react-three/drei";
