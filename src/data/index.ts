@@ -1,3 +1,9 @@
+export const heroInfo = {
+  title: "Transforming Concepts into Seamless User Experiences",
+  subtitle: "Don't stop thinking and don't stop going",
+  description: "Hi, I'm Shawn, a Frontend Developer base in China.",
+};
+
 export const gridItems = [
   {
     id: 1,
