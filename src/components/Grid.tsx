@@ -1,5 +1,5 @@
 import { BentoGrid, BentoGridItem } from "@/components/ui/BentoGrid";
-import { gridItems } from "@/data";
+import { emailAddress, gridItems, stackItems } from "@/data";
 
 const Grid = () => {
   return (
@@ -17,6 +17,8 @@ const Grid = () => {
             spareImg,
           }) => (
             <BentoGridItem
+              email={emailAddress}
+              stackItems={stackItems}
               id={id}
               key={id}
               title={title}

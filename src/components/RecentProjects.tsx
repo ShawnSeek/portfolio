@@ -1,5 +1,6 @@
 import { PinContainer } from "@/components/ui/Pin";
 import { projects } from "@/data";
+import Image from "next/image";
 import { FaLocationArrow } from "react-icons/fa";
 
 const RecentProjects = () => {
@@ -18,9 +19,19 @@ const RecentProjects = () => {
             <PinContainer title={link} href={link}>
               <div className="relative mb-10 flex h-[30vh] w-[80vw] items-center justify-center overflow-hidden sm:h-[40vh] sm:w-[570px]">
                 <div className="relative h-full w-full overflow-hidden bg-[#13162d] lg:rounded-3xl">
-                  <img alt="bg-img" src="/bg.png" />
+                  <Image
+                    fill
+                    alt="bg-img"
+                    src="/bg.png"
+                    className="object-cover"
+                  />
                 </div>
-                <img alt={title} src={img} className="absolute bottom-0 z-10" />
+                <Image
+                  fill
+                  alt={title}
+                  src={img}
+                  className="z-10 scale-75 object-bottom"
+                />
               </div>
               <h1 className="line-clamp-1 text-base font-bold md:text-xl lg:text-2xl">
                 {title}
@@ -36,7 +47,7 @@ const RecentProjects = () => {
                       className="flex h-8 w-8 items-center justify-center rounded-full border border-white/[0.2] bg-black lg:h-10 lg:w-10"
                       style={{ transform: `translateX(-${10 * index}px)` }}
                     >
-                      <img src={icon} alt={icon} className="p-2" />
+                      <Image fill src={icon} alt={icon} className="p-2" />
                     </div>
                   ))}
                 </div>

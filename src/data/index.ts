@@ -27,8 +27,8 @@ export const gridItems = [
   },
   {
     id: 3,
-    title: "My tech stack",
-    description: "I constantly try to improve",
+    title: "Tech stack",
+    description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",
     titleClassName: "justify-center",
@@ -67,6 +67,13 @@ export const gridItems = [
     spareImg: "",
   },
 ];
+
+export const stackItems = {
+  firstCol: ["React.js", "Next.js", "TypeScript"],
+  secondCol: ["React.js", "Next.js", "TypeScript"],
+};
+
+export const emailAddress = "shawbitx@gmail.com";
 
 export const projects = [
   {

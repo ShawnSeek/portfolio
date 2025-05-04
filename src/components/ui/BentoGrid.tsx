@@ -40,12 +40,16 @@ export const BentoGridItem = ({
   imgClassName,
   titleClassName,
   spareImg,
+  email = "",
+  stackItems = { firstCol: [], secondCol: [] },
 }: {
   className?: string;
   title?: string | React.ReactNode;
   description?: string | React.ReactNode;
   id?: number;
   img?: string;
+  email?: string;
+  stackItems?: { firstCol: string[]; secondCol: string[] };
   imgClassName?: string;
   titleClassName?: string;
   spareImg?: string;
@@ -53,7 +57,7 @@ export const BentoGridItem = ({
   const [copied, setCopied] = useState(false);
 
   const handCopy = () => {
-    navigator.clipboard.writeText("shawbitx@gmail.com");
+    navigator.clipboard.writeText(email);
     setCopied(true);
   };
 
@@ -101,10 +105,10 @@ export const BentoGridItem = ({
             "relative flex min-h-40 flex-col p-5 px-5 transition duration-200 group-hover/bento:translate-x-2 md:h-full lg:p-10",
           )}
         >
-          <div className="z-10 font-sans text-sm font-extralight text-[#c1c2d3] md:text-xs lg:text-base dark:text-neutral-300">
+          <div className="z-10 text-sm font-extralight text-[#c1c2d3] md:text-xs lg:text-base dark:text-neutral-300">
             {description}
           </div>
-          <div className="z-10 max-w-96 font-sans text-lg font-bold lg:text-3xl">
+          <div className="z-10 max-w-96 text-lg font-bold lg:text-3xl">
             {title}
           </div>
 
@@ -113,7 +117,7 @@ export const BentoGridItem = ({
           {id === 3 && (
             <div className="absolute -right-3 flex w-fit gap-1 lg:-right-2 lg:gap-5">
               <div className="flex flex-col gap-3 lg:gap-x-28">
-                {["React.js", "Next.js", "TypeScript"].map((item) => (
+                {stackItems.firstCol.map((item) => (
                   <span
                     key={item}
                     className="rounded-lg bg-[#10132E] px-3 py-2 text-center text-xs opacity-50 lg:px-3 lg:py-4 lg:text-base lg:opacity-100"
@@ -125,7 +129,7 @@ export const BentoGridItem = ({
               </div>
               <div className="flex flex-col gap-3 lg:gap-x-28">
                 <span className="rounded-lg bg-[#10132E] px-3 py-4 text-center" />
-                {["React.js", "Next.js", "TypeScript"].map((item) => (
+                {stackItems.secondCol.map((item) => (
                   <span
                     key={item}
                     className="rounded-lg bg-[#10132E] px-3 py-2 text-center text-xs opacity-50 lg:px-3 lg:py-4 lg:text-base lg:opacity-100"
