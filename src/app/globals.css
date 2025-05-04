@@ -2,6 +2,149 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@font-face {
+  font-family: "HYTangMeiRen";
+  src:
+    url("/fonts/HYTangMeiRen-75W.woff2") format("woff2"),
+    url("/fonts/HYTangMeiRen-75W.woff") format("woff");
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Monaspace Radon 字体导入 */
+@font-face {
+  font-family: "Monaspace Radon";
+  src:
+    url("/fonts/monaspace-radon-latin-200-normal.woff2") format("woff2"),
+    url("/fonts/monaspace-radon-latin-200-normal.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Monaspace Radon";
+  src:
+    url("/fonts/monaspace-radon-latin-200-italic.woff2") format("woff2"),
+    url("/fonts/monaspace-radon-latin-200-italic.woff") format("woff");
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Monaspace Radon";
+  src:
+    url("/fonts/monaspace-radon-latin-300-normal.woff2") format("woff2"),
+    url("/fonts/monaspace-radon-latin-300-normal.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Monaspace Radon";
+  src:
+    url("/fonts/monaspace-radon-latin-300-italic.woff2") format("woff2"),
+    url("/fonts/monaspace-radon-latin-300-italic.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Monaspace Radon";
+  src:
+    url("/fonts/monaspace-radon-latin-400-normal.woff2") format("woff2"),
+    url("/fonts/monaspace-radon-latin-400-normal.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Monaspace Radon";
+  src:
+    url("/fonts/monaspace-radon-latin-400-italic.woff2") format("woff2"),
+    url("/fonts/monaspace-radon-latin-400-italic.woff") format("woff");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Monaspace Radon";
+  src:
+    url("/fonts/monaspace-radon-latin-500-normal.woff2") format("woff2"),
+    url("/fonts/monaspace-radon-latin-500-normal.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Monaspace Radon";
+  src:
+    url("/fonts/monaspace-radon-latin-500-italic.woff2") format("woff2"),
+    url("/fonts/monaspace-radon-latin-500-italic.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Monaspace Radon";
+  src:
+    url("/fonts/monaspace-radon-latin-600-normal.woff2") format("woff2"),
+    url("/fonts/monaspace-radon-latin-600-normal.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Monaspace Radon";
+  src:
+    url("/fonts/monaspace-radon-latin-600-italic.woff2") format("woff2"),
+    url("/fonts/monaspace-radon-latin-600-italic.woff") format("woff");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Monaspace Radon";
+  src:
+    url("/fonts/monaspace-radon-latin-700-normal.woff2") format("woff2"),
+    url("/fonts/monaspace-radon-latin-700-normal.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Monaspace Radon";
+  src:
+    url("/fonts/monaspace-radon-latin-700-italic.woff2") format("woff2"),
+    url("/fonts/monaspace-radon-latin-700-italic.woff") format("woff");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Monaspace Radon";
+  src:
+    url("/fonts/monaspace-radon-latin-800-normal.woff2") format("woff2"),
+    url("/fonts/monaspace-radon-latin-800-normal.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Monaspace Radon";
+  src:
+    url("/fonts/monaspace-radon-latin-800-italic.woff2") format("woff2"),
+    url("/fonts/monaspace-radon-latin-800-italic.woff") format("woff");
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+body {
+  font-family:
+    "Monaspace Radon", "HYTangMeiRen", "PingFang SC", "Microsoft YaHei",
+    "Arial", "sans-serif";
+}
+
 @theme {
   --color-black-100: #000319;
   --animate-spotlight: spotlight 2s ease 0.75s 1 forwards;
