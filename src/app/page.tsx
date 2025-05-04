@@ -1,7 +1,7 @@
-import Experience from "@/components/Experience";
-import Grid from "@/components/Grid";
-import Hero from "@/components/Hero";
-import RecentProjects from "@/components/RecentProjects";
+import Experience from "@/components/home/Experience";
+import Grid from "@/components/home/Grid";
+import Hero from "@/components/home/Hero";
+import RecentProjects from "@/components/home/RecentProjects";
 
 export default function Home() {
   return (
