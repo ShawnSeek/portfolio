@@ -7,7 +7,7 @@ import { GlobalContextProvider } from "@/contexts/GlobalContext";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "ShawnSeek's Blog",
+  title: "ShawnSeek",
   description: "Don't stop thinking and don't stop going.",
 };
 
@@ -27,7 +27,7 @@ export default function RootLayout({
               enableSystem
               disableTransitionOnChange
             >
-              <div className="flex min-h-screen flex-col items-center justify-between">
+              <div className="flex min-h-screen flex-col items-center justify-between overflow-x-clip">
                 <Header />
                 <main className="flex-1">{children}</main>
                 <Footer />

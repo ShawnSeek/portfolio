@@ -55,4 +55,10 @@ export type WorkExperience = {
 export type SocialMedia = {
   id: number;
   img: string;
+  link: string;
+};
+
+export type ApproachItem = {
+  title: string;
+  desc: string;
 };

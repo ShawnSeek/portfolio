@@ -162,17 +162,30 @@ export const MenuInfo: MenuItemType[] = [
   },
 ];
 
+export const approaches = {
+  phase1: {
+    title: "Planning & Strategy",
+    desc: "We'll collaborate to map out your website's goals, target audience, and key functionalities. We'll discuss things like site structure, navigation, and content requirements.",
+  },
+  phase2: {
+    title: "Development & Progress Update",
+    desc: "Once we agree on the plan, I cue my lofi playlist and dive into coding. From initial sketches to polished code, I keep you updated every step of the way.",
+  },
+  phase3: {
+    title: "Development & Launch",
+    desc: "This is where the magic happens! Based on the approved design, I'll translate everything into functional code, building your website from the ground up.",
+  },
+};
+
 export const socialMedia: SocialMedia[] = [
   {
     id: 1,
-    img: "/git.svg",
+    img: "/github.svg",
+    link: "https://github.com/ShawnSeek",
   },
   {
     id: 2,
     img: "/twit.svg",
-  },
-  {
-    id: 3,
-    img: "/link.svg",
+    link: "https://x.com/shawbitx",
   },
 ];
