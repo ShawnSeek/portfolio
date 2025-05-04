@@ -20,11 +20,6 @@ const Hero = () => {
         <Spotlight className="top-28 left-80 h-[80vh] w-[50vw]" fill="blue" />
       </div>
 
-      <div className="dark:bg-black-100 absolute top-0 left-0 flex h-screen w-full items-center justify-center bg-white">
-        <div className="grid-bg absolute inset-0" />
-        <div className="dark:bg-black-100 pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
-      </div>
-
       <div className="relative z-10 my-20 flex justify-center">
         <div className="flex max-w-[89vw] flex-col items-center justify-center md:max-w-2xl lg:max-w-[60vw]">
           <h2 className="max-w-96 text-center text-xs tracking-widest text-blue-100 uppercase">

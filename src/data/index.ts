@@ -1,10 +1,20 @@
-export const heroInfo = {
+import type {
+  GridItem,
+  HeroInfo,
+  MenuItemType,
+  Project,
+  SocialMedia,
+  StackItems,
+  WorkExperience,
+} from "@/types";
+
+export const heroInfo: HeroInfo = {
   title: "Transforming Concepts into Seamless User Experiences",
   subtitle: "Don't stop thinking and don't stop going",
   description: "Hi, I'm Shawn, a Frontend Developer base in China.",
 };
 
-export const gridItems = [
+export const gridItems: GridItem[] = [
   {
     id: 1,
     title: "I prioritize client collaboration, fostering open communication ",
@@ -68,14 +78,14 @@ export const gridItems = [
   },
 ];
 
-export const stackItems = {
+export const stackItems: StackItems = {
   firstCol: ["React.js", "Next.js", "TypeScript"],
   secondCol: ["React.js", "Next.js", "TypeScript"],
 };
 
 export const emailAddress = "shawbitx@gmail.com";
 
-export const projects = [
+export const projects: Project[] = [
   {
     id: 1,
     title: "3D Solar System Planets to Explore",
@@ -110,7 +120,7 @@ export const projects = [
   },
 ];
 
-export const workExperience = [
+export const workExperience: WorkExperience[] = [
   {
     id: 1,
     title: "Frontend Engineer Intern",
@@ -141,7 +151,15 @@ export const workExperience = [
   },
 ];
 
-export const socialMedia = [
+export const MenuInfo: MenuItemType[] = [
+  { title: "Home", link: "/" },
+  {
+    title: "About",
+    children: [{ title: "About", link: "/about", img: "", desc: "" }],
+  },
+];
+
+export const socialMedia: SocialMedia[] = [
   {
     id: 1,
     img: "/git.svg",
