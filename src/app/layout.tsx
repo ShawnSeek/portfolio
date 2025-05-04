@@ -27,7 +27,7 @@ export default function RootLayout({
               enableSystem
               disableTransitionOnChange
             >
-              <div className="flex min-h-screen flex-col items-center justify-between overflow-x-clip">
+              <div className="flex min-h-screen flex-col items-center justify-between overflow-x-clip px-5 sm:px-10">
                 <Header />
                 <main className="flex-1">{children}</main>
                 <Footer />

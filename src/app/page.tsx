@@ -6,7 +6,7 @@ import RecentProjects from "@/components/home/RecentProjects";
 
 export default function Home() {
   return (
-    <div className="px-5 sm:px-10">
+    <div>
       <div className="relative max-w-7xl">
         <Hero />
         <Grid />
