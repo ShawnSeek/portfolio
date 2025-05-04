@@ -153,9 +153,12 @@ export const workExperience: WorkExperience[] = [
 
 export const MenuInfo: MenuItemType[] = [
   { title: "Home", link: "/" },
+  { title: "Blog", link: "/blog" },
   {
-    title: "About",
-    children: [{ title: "About", link: "/about", img: "", desc: "" }],
+    title: "Projects",
+    children: [
+      { title: "Amazing Css", link: "/amazing-css", img: "", desc: "" },
+    ],
   },
 ];
 

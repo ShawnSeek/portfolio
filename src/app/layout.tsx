@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { BackgroundBeamsWithCollision } from "@/components/ui/BackgroundBeamsWithCollision";
+import { GlobalContextProvider } from "@/contexts/GlobalContext";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -18,18 +19,22 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        <BackgroundBeamsWithCollision className="fixed inset-0 -z-10 h-full w-full">
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <Header />
-            {children}
-            <Footer />
-          </ThemeProvider>
-        </BackgroundBeamsWithCollision>
+        <GlobalContextProvider>
+          <BackgroundBeamsWithCollision className="fixed inset-0 -z-10 min-h-screen w-full">
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="dark"
+              enableSystem
+              disableTransitionOnChange
+            >
+              <div className="flex min-h-screen flex-col items-center justify-between">
+                <Header />
+                <main className="flex-1">{children}</main>
+                <Footer />
+              </div>
+            </ThemeProvider>
+          </BackgroundBeamsWithCollision>
+        </GlobalContextProvider>
       </body>
     </html>
   );

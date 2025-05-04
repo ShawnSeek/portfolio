@@ -1,7 +1,8 @@
 "use client";
+import { GlobalContext } from "@/contexts/GlobalContext";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "motion/react";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 
 export const BackgroundBeamsWithCollision = ({
   children,
@@ -10,76 +11,48 @@ export const BackgroundBeamsWithCollision = ({
   children: React.ReactNode;
   className?: string;
 }) => {
+  const { scrollContainerRef } = useContext(GlobalContext); // 获取ref
   const containerRef = useRef<HTMLDivElement>(null);
-  const parentRef = useRef<HTMLDivElement>(null);
 
-  const beams = [
-    {
-      initialX: 10,
-      translateX: 10,
-      duration: 7,
-      repeatDelay: 3,
-      delay: 2,
-    },
-    {
-      initialX: 600,
-      translateX: 600,
-      duration: 3,
-      repeatDelay: 3,
-      delay: 4,
-    },
-    {
-      initialX: 100,
-      translateX: 100,
-      duration: 7,
-      repeatDelay: 7,
-      className: "h-6",
-    },
-    {
-      initialX: 400,
-      translateX: 400,
-      duration: 5,
-      repeatDelay: 14,
-      delay: 4,
-    },
-    {
-      initialX: 800,
-      translateX: 800,
-      duration: 11,
-      repeatDelay: 2,
-      className: "h-20",
-    },
-    {
-      initialX: 1000,
-      translateX: 1000,
-      duration: 4,
-      repeatDelay: 2,
-      className: "h-12",
-    },
-    {
-      initialX: 1200,
-      translateX: 1200,
-      duration: 6,
-      repeatDelay: 4,
-      delay: 2,
-      className: "h-6",
-    },
-  ];
+  // 随机生成beams
+  const getRandomBeam = () => {
+    // 随机高度class
+    const heightClasses = [undefined, "h-6", "h-12", "h-14", "h-20"];
+    const x = Math.floor(Math.random() * window.innerWidth);
+    return {
+      initialX: x,
+      translateX: x, // x轴不变
+      duration: Math.random() * 8 + 3, // 3~11秒
+      repeatDelay: Math.random() * 8, // 0~8秒
+      delay: Math.random() * 5, // 0~5秒
+      className:
+        heightClasses[Math.floor(Math.random() * heightClasses.length)],
+    };
+  };
+
+  // beams数量随机 5~12
+  const [beams, setBeams] = useState<any>([]);
+
+  useEffect(() => {
+    const randomBeams = Array.from(
+      { length: Math.floor(Math.random() * 20 + 5) },
+      () => getRandomBeam(),
+    );
+    setBeams(randomBeams);
+  }, []);
 
   return (
     <div
-      ref={parentRef}
       className={cn(
-        "relative z-999 flex w-full flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-white to-neutral-100 dark:from-neutral-950 dark:to-neutral-800",
+        "items-centeto-neutral-100 dark:from: anyral-950 relative z-999 flex w-full flex-col dark:to-neutral-800",
         className,
       )}
     >
-      {beams.map((beam: any) => (
+      {beams.map((beam: any, idx: any) => (
         <CollisionMechanism
-          key={beam.initialX + "beam-idx"}
+          key={idx}
           beamOptions={beam}
           containerRef={containerRef}
-          parentRef={parentRef}
         />
       ))}
 
@@ -88,7 +61,12 @@ export const BackgroundBeamsWithCollision = ({
         <div className="dark:bg-black-100 pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
       </div>
 
-      <div className="h-full w-full overflow-scroll"> {children}</div>
+      <div
+        ref={scrollContainerRef}
+        className="min-h-screen w-full overflow-scroll"
+      >
+        {children}
+      </div>
       <div
         ref={containerRef}
         className="pointer-events-none absolute inset-x-0 bottom-0 w-full bg-neutral-100"
@@ -105,7 +83,6 @@ const CollisionMechanism = React.forwardRef<
   HTMLDivElement,
   {
     containerRef: React.RefObject<HTMLDivElement | null>;
-    parentRef: React.RefObject<HTMLDivElement | null>;
     beamOptions?: {
       initialX?: number;
       translateX?: number;
@@ -118,7 +95,7 @@ const CollisionMechanism = React.forwardRef<
       repeatDelay?: number;
     };
   }
->(({ parentRef, containerRef, beamOptions = {} }, ref) => {
+>(({ containerRef, beamOptions = {} }, ref) => {
   const beamRef = useRef<HTMLDivElement>(null);
   const [collision, setCollision] = useState<{
     detected: boolean;

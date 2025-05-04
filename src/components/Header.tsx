@@ -5,13 +5,16 @@ import {
   MenuItem,
   ProductItem,
 } from "@/components/ui/NavbarMenu";
+import { GlobalContext } from "@/contexts/GlobalContext";
+
 import { MenuInfo } from "@/data";
-import { useState } from "react";
+import { useContext, useState } from "react";
 
 const Header = () => {
   const [active, setActive] = useState<string | null>(null);
+  const { scrollContainerRef } = useContext(GlobalContext);
   return (
-    <Menu setActive={setActive}>
+    <Menu setActive={setActive} scrollContainerRef={scrollContainerRef as any}>
       {MenuInfo.map((item, index) => (
         <MenuItem
           key={index}

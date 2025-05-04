@@ -30,7 +30,7 @@ export const PinContainer = ({
   return (
     <div
       className={cn(
-        "group/pin relative z-50 cursor-pointer",
+        "group/pin relative z-0 cursor-pointer",
         containerClassName,
       )}
       onMouseEnter={onMouseEnter}
@@ -49,7 +49,7 @@ export const PinContainer = ({
           }}
           className="absolute top-1/2 left-1/2 flex items-start justify-start overflow-hidden rounded-2xl border border-white/[0.1] p-4 shadow-[0_8px_16px_rgb(0_0_0/0.4)] transition duration-700 group-hover/pin:border-white/[0.2]"
         >
-          <div className={cn("relative z-50", className)}>{children}</div>
+          <div className={cn("relative z-0", className)}>{children}</div>
         </div>
       </div>
       <PinPerspective title={title} href={href} />
@@ -65,7 +65,7 @@ export const PinPerspective = ({
   href?: string;
 }) => {
   return (
-    <motion.div className="pointer-events-none z-[60] flex h-80 w-full items-center justify-center opacity-0 transition duration-500 group-hover/pin:opacity-100">
+    <motion.div className="pointer-events-none z-0 flex h-80 w-full items-center justify-center opacity-0 transition duration-500 group-hover/pin:opacity-100">
       <div className="inset-0 -mt-7 h-full w-full flex-none">
         <div className="absolute inset-x-0 top-0 flex justify-center">
           <a
