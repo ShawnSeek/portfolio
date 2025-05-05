@@ -144,6 +144,68 @@ body {
     "Monaspace Radon", "HYTangMeiRen", "PingFang SC", "Microsoft YaHei",
     "Arial", "sans-serif";
 }
+/* 让代码块风格更像 Bun 官网 */
+.prose pre {
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+  background: #232136;
+  overflow-x: auto;
+  font-size: 1rem;
+  line-height: 1.7;
+  box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.08);
+}
+
+.prose code {
+  border-radius: 8px;
+  padding: 0.2em 0.4em;
+  font-size: 0.95em;
+}
+
+.prose h1,
+.prose h2,
+.prose h3 {
+  color: #d2d6e9;
+  margin: 10px 0;
+}
+.prose h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+.prose h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+.prose h3 {
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+.prose a {
+  color: #38bdf8;
+}
+.prose strong {
+  color: #facc15;
+}
+.prose em {
+  color: #f472b6;
+}
+.prose code {
+  color: #f472b6;
+  background: #232136;
+}
+.prose blockquote {
+  color: #cdd6f4;
+  border-left-color: #6366f1;
+}
+.prose ul > li::marker {
+  color: #38bdf8;
+}
+.prose table th {
+  color: #facc15;
+}
 
 @theme {
   --color-black-100: #000319;
