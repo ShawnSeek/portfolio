@@ -20,7 +20,7 @@ function extractHeadings(mdx: string) {
 export default async function BlogDetailPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
   const blog = await getBlogById(id);
