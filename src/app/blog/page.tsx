@@ -28,7 +28,7 @@ export default async function Blog() {
                 {blog.date && (
                   <>
                     <span>·</span>
-                    <span>{new Date(blog.date).toLocaleDateString()}</span>
+                    <span>{blog.date}</span>
                   </>
                 )}
               </div>
