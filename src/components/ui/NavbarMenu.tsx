@@ -5,15 +5,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
-const transition = {
-  type: "spring",
-  mass: 0.5,
-  damping: 11.5,
-  stiffness: 100,
-  restDelta: 0.001,
-  restSpeed: 0.001,
-};
-
 export const MenuItem = ({
   setActive,
   active,
@@ -64,7 +55,14 @@ export const MenuItem = ({
           <motion.div
             initial={{ opacity: 0, scale: 0.85, y: 10 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={transition}
+            transition={{
+              type: "spring",
+              mass: 0.5,
+              damping: 11.5,
+              stiffness: 100,
+              restDelta: 0.001,
+              restSpeed: 0.001,
+            }}
             layoutId="active"
             className="overflow-hidden rounded-xl border border-purple-100 bg-[#010318] shadow-xl backdrop-blur-sm"
           >
