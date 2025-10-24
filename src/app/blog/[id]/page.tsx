@@ -17,11 +17,7 @@ function extractHeadings(mdx: string) {
   return headings;
 }
 
-export default async function BlogDetailPage({
-  params,
-}: {
-  params: Promise<{ id: string }>;
-}) {
+export default async function BlogDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const blog = await getBlogById(id);
   if (!blog) return notFound();
@@ -29,9 +25,7 @@ export default async function BlogDetailPage({
   return (
     <div className="flex justify-between gap-16 bg-transparent pt-20 lg:ml-60">
       <main className="w-80 px-4 py-16 md:w-100 lg:w-160">
-        <h1 className="mb-2 text-3xl font-bold md:text-4xl">
-          {blog.title || blog.id}
-        </h1>
+        <h1 className="mb-2 text-3xl font-bold md:text-4xl">{blog.title || blog.id}</h1>
         <div className="mb-8 flex items-center gap-2 text-sm text-neutral-500">
           {blog.author && <span>{blog.author}</span>}
           {blog.date && <span>· {blog.date}</span>}

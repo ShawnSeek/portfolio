@@ -156,9 +156,7 @@ export const MenuInfo: MenuItemType[] = [
   { title: "Blog", link: "/blog" },
   {
     title: "Projects",
-    children: [
-      { title: "Amazing Css", link: "/amazing-css", img: "", desc: "" },
-    ],
+    children: [{ title: "Amazing Css", link: "/amazing-css", img: "", desc: "" }],
   },
 ];
 

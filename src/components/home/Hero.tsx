@@ -9,14 +9,8 @@ const Hero = () => {
   return (
     <div className="pt-36 pb-20">
       <div>
-        <Spotlight
-          className="-top-40 -left-10 h-screen md:-top-20 md:-left-32"
-          fill="white"
-        />
-        <Spotlight
-          className="top-10 left-full h-[80vh] w-[50vw]"
-          fill="purple"
-        />
+        <Spotlight className="-top-40 -left-10 h-screen md:-top-20 md:-left-32" fill="white" />
+        <Spotlight className="top-10 left-full h-[80vh] w-[50vw]" fill="purple" />
         <Spotlight className="top-28 left-80 h-[80vh] w-[50vw]" fill="blue" />
       </div>
 
@@ -33,11 +27,7 @@ const Hero = () => {
             {heroInfo.description}
           </p>
           <Link href={"#about"}>
-            <MagicButton
-              title="Show my work"
-              icon={<FaLocationArrow />}
-              position="right"
-            />
+            <MagicButton title="Show my work" icon={<FaLocationArrow />} position="right" />
           </Link>
         </div>
       </div>

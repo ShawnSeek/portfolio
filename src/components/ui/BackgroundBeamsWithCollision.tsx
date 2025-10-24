@@ -25,8 +25,7 @@ export const BackgroundBeamsWithCollision = ({
       duration: Math.random() * 8 + 3, // 3~11秒
       repeatDelay: Math.random() * 8, // 0~8秒
       delay: Math.random() * 5, // 0~5秒
-      className:
-        heightClasses[Math.floor(Math.random() * heightClasses.length)],
+      className: heightClasses[Math.floor(Math.random() * heightClasses.length)],
     };
   };
 
@@ -34,9 +33,8 @@ export const BackgroundBeamsWithCollision = ({
   const [beams, setBeams] = useState<any>([]);
 
   useEffect(() => {
-    const randomBeams = Array.from(
-      { length: Math.floor(Math.random() * 20 + 5) },
-      () => getRandomBeam(),
+    const randomBeams = Array.from({ length: Math.floor(Math.random() * 20 + 5) }, () =>
+      getRandomBeam()
     );
     setBeams(randomBeams);
   }, []);
@@ -45,15 +43,11 @@ export const BackgroundBeamsWithCollision = ({
     <div
       className={cn(
         "items-centeto-neutral-100 dark:from: anyral-950 relative z-999 flex w-full flex-col dark:to-neutral-800",
-        className,
+        className
       )}
     >
       {beams.map((beam: any, idx: any) => (
-        <CollisionMechanism
-          key={idx}
-          beamOptions={beam}
-          containerRef={containerRef}
-        />
+        <CollisionMechanism key={idx} beamOptions={beam} containerRef={containerRef} />
       ))}
 
       <div className="dark:bg-black-100 absolute top-0 left-0 -z-10 flex h-screen w-full items-center justify-center bg-white">
@@ -61,10 +55,7 @@ export const BackgroundBeamsWithCollision = ({
         <div className="dark:bg-black-100 pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
       </div>
 
-      <div
-        ref={scrollContainerRef}
-        className="min-h-screen w-full overflow-scroll"
-      >
+      <div ref={scrollContainerRef} className="min-h-screen w-full overflow-scroll">
         {children}
       </div>
       <div
@@ -95,7 +86,7 @@ const CollisionMechanism = React.forwardRef<
       repeatDelay?: number;
     };
   }
->(({ containerRef, beamOptions = {} }, ref) => {
+>(({ containerRef, beamOptions = {} }, _ref) => {
   const beamRef = useRef<HTMLDivElement>(null);
   const [collision, setCollision] = useState<{
     detected: boolean;
@@ -174,7 +165,7 @@ const CollisionMechanism = React.forwardRef<
         }}
         className={cn(
           "absolute top-20 left-0 m-auto h-14 w-px rounded-full bg-gradient-to-t from-indigo-500 via-purple-500 to-transparent",
-          beamOptions.className,
+          beamOptions.className
         )}
       />
       <AnimatePresence>

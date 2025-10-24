@@ -5,9 +5,7 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <footer className="mt-auto flex w-full max-w-7xl flex-col items-center justify-between gap-4 py-10 md:flex-row">
-      <p className="text-sm font-light md:text-base md:font-normal">
-        Copyright Ⓒ 2025 ShawnSeek
-      </p>
+      <p className="text-sm font-light md:text-base md:font-normal">Copyright Ⓒ 2025 ShawnSeek</p>
       <div className="flex items-center gap-6 md:gap-3">
         {socialMedia.map((item) => (
           <Link

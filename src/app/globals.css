@@ -141,8 +141,7 @@
 
 body {
   font-family:
-    "Monaspace Radon", "HYTangMeiRen", "PingFang SC", "Microsoft YaHei",
-    "Arial", "sans-serif";
+    "Monaspace Radon", "HYTangMeiRen", "PingFang SC", "Microsoft YaHei", "Arial", "sans-serif";
 }
 /* 让代码块风格更像 Bun 官网 */
 .prose pre {

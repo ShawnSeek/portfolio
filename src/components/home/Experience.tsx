@@ -25,12 +25,8 @@ const Experience = () => {
                 className="w-16 md:w-20 lg:h-32"
               />
               <div className="lg:ms-5">
-                <h1 className="text-start text-xl font-bold md:text-2xl">
-                  {card.title}
-                </h1>
-                <p className="mt-3 text-start font-semibold text-gray-400">
-                  {card.desc}
-                </p>
+                <h1 className="text-start text-xl font-bold md:text-2xl">{card.title}</h1>
+                <p className="mt-3 text-start font-semibold text-gray-400">{card.desc}</p>
               </div>
             </div>
           </Button>

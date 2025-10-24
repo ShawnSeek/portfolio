@@ -1,10 +1,5 @@
 "use client";
-import {
-  HoveredLink,
-  Menu,
-  MenuItem,
-  ProductItem,
-} from "@/components/ui/NavbarMenu";
+import { HoveredLink, Menu, MenuItem, ProductItem } from "@/components/ui/NavbarMenu";
 import { GlobalContext } from "@/contexts/GlobalContext";
 
 import { MenuInfo } from "@/data";
@@ -37,7 +32,7 @@ const Header = () => {
                 <HoveredLink key={idx} href={child.link}>
                   {child.title}
                 </HoveredLink>
-              ),
+              )
             )}
         </MenuItem>
       ))}

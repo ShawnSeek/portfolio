@@ -15,9 +15,7 @@ export default async function Blog() {
               href={`/blog/${blog.id}`}
               className="block w-full rounded-xl border-b border-white/20 px-6 py-8 transition hover:scale-[1.02] hover:bg-purple-200/15"
             >
-              <h2 className="mb-2 text-2xl font-bold">
-                {blog.title || blog.id}
-              </h2>
+              <h2 className="mb-2 text-2xl font-bold">{blog.title || blog.id}</h2>
               {blog.description && (
                 <p className="mb-2 line-clamp-2 text-base font-semibold text-wrap text-neutral-200">
                   {blog.description}

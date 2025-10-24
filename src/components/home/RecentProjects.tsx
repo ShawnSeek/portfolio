@@ -7,8 +7,7 @@ const RecentProjects = () => {
   return (
     <div className="py-20" id="projects">
       <h1 className="heading">
-        A small section of{" "}
-        <span className="text-purple-300">Recent Projects</span>
+        A small section of <span className="text-purple-300">Recent Projects</span>
       </h1>
       <div className="mt-10 flex flex-wrap items-center justify-center gap-x-24 gap-y-8 p-4">
         {projects.map(({ id, title, des, img, iconLists, link }) => (
@@ -19,23 +18,11 @@ const RecentProjects = () => {
             <PinContainer title={link} href={link}>
               <div className="relative mb-10 flex h-[30vh] w-[80vw] items-center justify-center overflow-hidden sm:h-[40vh] sm:w-[570px]">
                 <div className="relative h-full w-full overflow-hidden bg-[#13162d] lg:rounded-3xl">
-                  <Image
-                    fill
-                    alt="bg-img"
-                    src="/bg.png"
-                    className="object-cover"
-                  />
+                  <Image fill alt="bg-img" src="/bg.png" className="object-cover" />
                 </div>
-                <Image
-                  fill
-                  alt={title}
-                  src={img}
-                  className="z-10 scale-75 object-bottom"
-                />
+                <Image fill alt={title} src={img} className="z-10 scale-75 object-bottom" />
               </div>
-              <h1 className="line-clamp-1 text-base font-bold md:text-xl lg:text-2xl">
-                {title}
-              </h1>
+              <h1 className="line-clamp-1 text-base font-bold md:text-xl lg:text-2xl">{title}</h1>
               <p className="line-clamp-2 text-sm font-light text-[#BEC1DD] lg:text-xl lg:font-normal">
                 {des}
               </p>
@@ -52,9 +39,7 @@ const RecentProjects = () => {
                   ))}
                 </div>
                 <div className="flex items-center justify-center">
-                  <p className="text-sm text-purple-300 md:text-xs lg:text-xl">
-                    Check Live Site
-                  </p>
+                  <p className="text-sm text-purple-300 md:text-xs lg:text-xl">Check Live Site</p>
                   <FaLocationArrow className="ms-3" color="#CBACF9" />
                 </div>
               </div>

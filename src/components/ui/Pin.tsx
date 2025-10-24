@@ -16,9 +16,7 @@ export const PinContainer = ({
   className?: string;
   containerClassName?: string;
 }) => {
-  const [transform, setTransform] = useState(
-    "translate(-50%,-50%) rotateX(0deg)",
-  );
+  const [transform, setTransform] = useState("translate(-50%,-50%) rotateX(0deg)");
 
   const onMouseEnter = () => {
     setTransform("translate(-50%,-50%) rotateX(40deg) scale(0.8)");
@@ -29,10 +27,7 @@ export const PinContainer = ({
 
   return (
     <div
-      className={cn(
-        "group/pin relative z-0 cursor-pointer",
-        containerClassName,
-      )}
+      className={cn("group/pin relative z-0 cursor-pointer", containerClassName)}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
@@ -57,13 +52,7 @@ export const PinContainer = ({
   );
 };
 
-export const PinPerspective = ({
-  title,
-  href,
-}: {
-  title?: string;
-  href?: string;
-}) => {
+export const PinPerspective = ({ title, href }: { title?: string; href?: string }) => {
   return (
     <motion.div className="pointer-events-none z-0 flex h-80 w-full items-center justify-center opacity-0 transition duration-500 group-hover/pin:opacity-100">
       <div className="inset-0 -mt-7 h-full w-full flex-none">

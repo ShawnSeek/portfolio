@@ -6,16 +6,7 @@ const Grid = () => {
     <section id="about">
       <BentoGrid className="w-full py-20">
         {gridItems.map(
-          ({
-            id,
-            title,
-            description,
-            className,
-            img,
-            imgClassName,
-            titleClassName,
-            spareImg,
-          }) => (
+          ({ id, title, description, className, img, imgClassName, titleClassName, spareImg }) => (
             <BentoGridItem
               email={emailAddress}
               stackItems={stackItems}
@@ -29,7 +20,7 @@ const Grid = () => {
               titleClassName={titleClassName}
               spareImg={spareImg}
             />
-          ),
+          )
         )}
       </BentoGrid>
     </section>

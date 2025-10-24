@@ -130,9 +130,7 @@ export const ProductItem = ({
         className="shrink-0 rounded-md shadow-2xl"
       />
       <div>
-        <h4 className="mb-1 text-xl font-bold text-black dark:text-white">
-          {title}
-        </h4>
+        <h4 className="mb-1 text-xl font-bold text-black dark:text-white">{title}</h4>
         <p className="max-w-[10rem] text-sm text-neutral-700 dark:text-neutral-300">
           {description}
         </p>
@@ -143,10 +141,7 @@ export const ProductItem = ({
 
 export const HoveredLink = ({ children, ...rest }: any) => {
   return (
-    <Link
-      {...rest}
-      className="rounded-lg p-2 hover:bg-purple-300 hover:text-purple-500"
-    >
+    <Link {...rest} className="rounded-lg p-2 hover:bg-purple-300 hover:text-purple-500">
       {children}
     </Link>
   );

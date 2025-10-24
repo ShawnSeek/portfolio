@@ -16,10 +16,7 @@ const Approach = () => {
           icon={<AceternityIcon order="Phase 1" />}
           desc={approaches.phase1.desc}
         >
-          <CanvasRevealEffect
-            animationSpeed={5.1}
-            containerClassName="bg-emerald-900"
-          />
+          <CanvasRevealEffect animationSpeed={5.1} containerClassName="bg-emerald-900" />
         </Card>
         <Card
           title={approaches.phase2.title}
