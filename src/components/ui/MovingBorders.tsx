@@ -7,7 +7,8 @@ import {
   useMotionValue,
   useTransform,
 } from "motion/react";
-import React, { useRef } from "react";
+import type React from "react";
+import { useRef } from "react";
 
 export function Button({
   borderRadius = "1.75rem",

@@ -6,13 +6,13 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export const MenuItem = ({
-  setActive,
+  setActiveAction,
   active,
   item,
   link,
   children,
 }: {
-  setActive: (item: string) => void;
+  setActiveAction: (item: string) => void;
   active: string | null;
   item: string;
   link?: string;
@@ -39,7 +39,7 @@ export const MenuItem = ({
 
   // 有children时，保持原有下拉交互
   return (
-    <div className="relative inline-block" onMouseEnter={() => setActive(item)}>
+    <div className="relative inline-block" onMouseEnter={() => setActiveAction(item)}>
       <motion.p
         transition={{ duration: 0.3 }}
         className={`cursor-pointer rounded-xl px-4 py-2 transition-colors ${
@@ -77,11 +77,11 @@ export const MenuItem = ({
 };
 
 export const Menu = ({
-  setActive,
+  setActiveAction,
   children,
   scrollContainerRef, // 新增
 }: {
-  setActive: (item: string | null) => void;
+  setActiveAction: (item: string | null) => void;
   children: React.ReactNode;
   scrollContainerRef: React.RefObject<HTMLElement>; // 新增
 }) => {
@@ -99,7 +99,7 @@ export const Menu = ({
 
   return (
     <nav
-      onMouseLeave={() => setActive(null)}
+      onMouseLeave={() => setActiveAction(null)}
       className={`fixed top-0 left-0 z-9999 flex h-20 w-full items-center justify-center space-x-4 rounded-none border-none transition-colors duration-300 ${
         scrolled ? "backdrop-blur-md" : "bg-transparent"
       }`}

@@ -25,21 +25,21 @@
     "rules": {
       "recommended": true,
       "style": {
-        "useImportType": "off"
+        "useImportType": "on"
       },
       "complexity": {
         "useOptionalChain": "off",
         "useLiteralKeys": "off"
       },
       "suspicious": {
-        "noImplicitAnyLet": "off",
+        "noImplicitAnyLet": "on",
         "noAssignInExpressions": "off",
         "noArrayIndexKey": "off",
         "noExplicitAny": "off"
       },
       "correctness": {
         "useExhaustiveDependencies": "off",
-        "noUnusedFunctionParameters": "off"
+        "noUnusedFunctionParameters": "on"
       },
       "performance": {
         "noImgElement": "off"

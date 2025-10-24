@@ -7,7 +7,7 @@ import rehypePrettyCode from "rehype-pretty-code";
 function extractHeadings(mdx: string) {
   const headingRegex = /^###?\s+(.+)$/gm;
   const headings: { level: number; text: string; id: string }[] = [];
-  let match;
+  let match: RegExpExecArray | null;
   while ((match = headingRegex.exec(mdx))) {
     const level = match[0].startsWith("###") ? 3 : 2;
     const text = match[1].trim();
