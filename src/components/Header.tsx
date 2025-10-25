@@ -9,11 +9,11 @@ const Header = () => {
   const [active, setActive] = useState<string | null>(null);
   const { scrollContainerRef } = useContext(GlobalContext);
   return (
-    <Menu setActive={setActive} scrollContainerRef={scrollContainerRef as any}>
+    <Menu setActiveAction={setActive} scrollContainerRef={scrollContainerRef as any}>
       {MenuInfo.map((item, index) => (
         <MenuItem
           key={index}
-          setActive={setActive}
+          setActiveAction={setActive}
           active={active}
           item={item.title}
           link={item.link}
