@@ -1,7 +1,7 @@
 "use client";
 import countries from "@/data/globe.json";
 import { OrbitControls } from "@react-three/drei";
-import { Canvas, extend, useThree } from "@react-three/fiber";
+import { Canvas, extend } from "@react-three/fiber";
 import { useEffect, useRef, useState } from "react";
 import { Color, Fog, PerspectiveCamera, Scene, Vector3 } from "three";
 import ThreeGlobe from "three-globe";
@@ -224,25 +224,25 @@ export function Globe({ globeConfig, data }: WorldProps) {
   return <group ref={groupRef} />;
 }
 
-export function WebGLRendererConfig() {
-  const { gl, size } = useThree();
-
-  useEffect(() => {
-    gl.setPixelRatio(window.devicePixelRatio);
-    gl.setSize(size.width, size.height);
-    gl.setClearColor(0xffaaff, 0);
-  }, []);
-
-  return null;
-}
-
 export function World(props: WorldProps) {
   const { globeConfig } = props;
   const scene = new Scene();
   scene.fog = new Fog(0xffffff, 400, 2000);
   return (
-    <Canvas scene={scene} camera={new PerspectiveCamera(50, aspect, 180, 1800)}>
-      <WebGLRendererConfig />
+    <Canvas
+      scene={scene} 
+      camera={new PerspectiveCamera(50, aspect, 180, 1800)}
+      // gl={async (props) => {
+      //   const renderer = new WebGPURenderer(props as any)
+      //   await renderer.init()
+      //   return renderer
+      // }}  
+      onCreated={({gl, size})=>{
+        gl.setPixelRatio(window.devicePixelRatio);
+        gl.setSize(size.width, size.height);
+        gl.setClearColor(0xffaaff, 0);
+      }}
+    >
       <ambientLight color={globeConfig.ambientLight} intensity={0.6} />
       <directionalLight
         color={globeConfig.directionalLeftLight}
