@@ -1,0 +1,37 @@
+{
+  "plugins": ["nextjs", "import", "react", "react-perf"],
+  "rules": {
+    "nextjs/no-html-link-for-pages": [
+      "error",
+      "src/app"
+    ],
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index"
+        ],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ],
+    "react/jsx-sort-props": [
+      "warn",
+      {
+        "callbacksLast": true,
+        "shorthandFirst": true,
+        "noSortAlphabetically": false,
+        "reservedFirst": true
+      }
+    ],
+    "react-hooks/exhaustive-deps": "off"
+  }
+}
