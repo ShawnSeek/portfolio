@@ -42,7 +42,7 @@ async function loadAllBlogs(): Promise<BlogData[]> {
 
 export async function getAllBlogs(): Promise<BlogMeta[]> {
   const blogs = await loadAllBlogs();
-  return blogs.map(({ content, ...meta }) => meta);
+  return blogs.map(({ _, ...meta }) => meta);
 }
 
 export async function getBlogById(id: string): Promise<BlogData | null> {
