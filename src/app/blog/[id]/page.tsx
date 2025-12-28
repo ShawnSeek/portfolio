@@ -2,6 +2,7 @@ import { getBlogById } from "@/lib/getBlog";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { notFound } from "next/navigation";
 import rehypePrettyCode from "rehype-pretty-code";
+import Link from "next/link";
 
 // 提取 h2/h3 目录
 function extractHeadings(mdx: string) {
@@ -57,7 +58,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ id:
           {headings.length === 0 && <li>No Things</li>}
           {headings.map((h) => (
             <li key={h.id} className={h.level === 2 ? "font-bold" : "ml-4"}>
-              <a href={`#${h.id}`}>{h.text}</a>
+              <Link href={`#${h.id}`}>{h.text}</Link>
             </li>
           ))}
         </ul>

@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import dynamic from "next/dynamic";
 import { useState } from "react";
 import { IoCopyOutline } from "react-icons/io5";
+import Image from "next/image";
 
 const Lottie = dynamic(() => import("lottie-react"), {
   ssr: false,
@@ -23,7 +24,7 @@ export const BentoGrid = ({
     <div
       className={cn(
         "md:grid-row-7 mx-auto grid grid-cols-1 gap-4 md:grid-cols-6 lg:grid-cols-5 lg:gap-8",
-        className
+        className,
       )}
     >
       {children}
@@ -65,7 +66,7 @@ export const BentoGridItem = ({
     <div
       className={cn(
         "group/bento shadow-input relative row-span-1 flex flex-col justify-between space-y-4 overflow-hidden rounded-3xl border border-white/[0.1] transition duration-200 hover:shadow-xl dark:bg-black dark:shadow-none",
-        className
+        className,
       )}
       style={{
         background: "rgb(4,7,29)",
@@ -75,12 +76,12 @@ export const BentoGridItem = ({
       <div className={`${id === 6 && "flex justify-center"} h-full`}>
         <div className="absolute h-full w-full">
           {img && (
-            <img src={img} alt={img} className={cn(imgClassName, "object-cover object-center")} />
+            <Image src={img} alt={img} className={cn(imgClassName, "object-cover object-center")} />
           )}
         </div>
         <div className={`absolute right-0 -bottom-5 ${id === 5 && "w-full opacity-80"}`}>
           {spareImg && (
-            <img
+            <Image
               src={spareImg}
               alt={spareImg}
               className="h-full w-full object-cover object-center"
@@ -95,7 +96,7 @@ export const BentoGridItem = ({
         <div
           className={cn(
             titleClassName,
-            "relative flex min-h-40 flex-col p-5 px-5 transition duration-200 group-hover/bento:translate-x-2 md:h-full lg:p-10"
+            "relative flex min-h-40 flex-col p-5 px-5 transition duration-200 group-hover/bento:translate-x-2 md:h-full lg:p-10",
           )}
         >
           <div className="z-10 text-sm font-extralight text-[#c1c2d3] md:text-xs lg:text-base dark:text-neutral-300">
